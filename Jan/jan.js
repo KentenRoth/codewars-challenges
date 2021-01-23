@@ -10,19 +10,12 @@ function XO(str) {
 	let string = str.toLowerCase();
 	for (let i = 0; i < string.length; i++) {
 		if (string[i] === 'x') {
-			x = x + 1;
+			x += 1;
 		} else if (string[i] === 'o') {
-			o = o + 1;
+			o += 1;
 		}
 	}
-
-	if (x === o) {
-		console.log(true);
-		return true;
-	} else {
-		console.log(false);
-		return false;
-	}
+	return x === o ? true : false;
 }
 
 XO('xo'); // true
