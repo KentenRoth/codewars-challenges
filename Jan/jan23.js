@@ -5,19 +5,15 @@
 function calculateYears(principal, interest, tax, desired) {
 	let years = 0;
 	let yearlyPrincipal = principal;
-	if (principal >= desired) {
-		console.log(years);
-		return years;
-	}
-	do {
-		let currentPrincipal = yearlyPrincipal;
-		let taxedAmount = currentPrincipal * interest * tax;
-		let profit = currentPrincipal * interest - taxedAmount;
-		let newPrincipal = profit + currentPrincipal;
+
+	while (yearlyPrincipal < desired) {
+		let taxedAmount = yearlyPrincipal * interest * tax;
+		let newPrincipal = yearlyPrincipal * (interest + 1) - taxedAmount;
 		yearlyPrincipal = newPrincipal;
 		years++;
-	} while (yearlyPrincipal < desired);
-	return console.log(years);
+	}
+
+	return years;
 }
 
 calculateYears(1000, 0.05, 0.18, 1100); // 3 years
