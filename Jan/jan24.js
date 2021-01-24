@@ -36,7 +36,8 @@ function rgbToHex(r, g, b) {
 		let rFirstHex = '';
 		let rSecondHex = '';
 		let rRemain = '';
-		if (r / 16 >= 15) {
+		console.log(247 / 16);
+		if (r / 16 >= 16) {
 			rHex = 'FF';
 		} else {
 			rFirstHex = conversion[Math.floor(r / 16)];
@@ -51,7 +52,7 @@ function rgbToHex(r, g, b) {
 		let gFirstHex = '';
 		let gSecondHex = '';
 		let gRemain = '';
-		if (g / 16 >= 15) {
+		if (g / 16 >= 16) {
 			gHex = 'FF';
 		} else {
 			gFirstHex = conversion[Math.floor(g / 16)];
@@ -66,7 +67,7 @@ function rgbToHex(r, g, b) {
 		let bFirstHex = '';
 		let bSecondHex = '';
 		let bRemain = '';
-		if (b / 16 >= 15) {
+		if (b / 16 >= 16) {
 			bHex = 'FF';
 		} else {
 			bFirstHex = conversion[Math.floor(b / 16)];
@@ -81,8 +82,8 @@ function rgbToHex(r, g, b) {
 	console.log(rHex + gHex + bHex);
 }
 
-rgbToHex(0, 0, 0); //'000000'
-rgbToHex(0, 0, -20); //'000000'
-rgbToHex(300, 255, 255); //'FFFFFF'
-rgbToHex(173, 255, 47); //'ADFF2F'
+// rgbToHex(0, 0, 0); //'000000'
+// rgbToHex(0, 0, -20); //'000000'
+// rgbToHex(300, 255, 255); //'FFFFFF'
+// rgbToHex(173, 255, 47); //'ADFF2F'
 rgbToHex(247, 255, 271); // F7FFFF
