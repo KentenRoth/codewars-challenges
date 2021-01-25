@@ -26,8 +26,6 @@ let conversion = [
 ];
 
 function rgbToHex(r, g, b) {
-	// Each argument will have its own hex code
-	// need to combine each hex code when finished
 	let rgbCode = [r, g, b];
 	let hex = '';
 
@@ -35,7 +33,10 @@ function rgbToHex(r, g, b) {
 		if (rgbCode[i] / 16 >= 16) {
 			hex += 'FF';
 		} else if (rgbCode[i] > 0) {
-			hex += rgbCode[i].toString(16).toUpperCase();
+			hex +=
+				rgbCode[i].toString(16).length == 1
+					? '0' + rgbCode[i].toString(16).toUpperCase()
+					: rgbCode[i].toString(16).toUpperCase();
 			// hex += conversion[Math.floor(rgbCode[i] / 16)];
 			// hex += conversion[rgbCode[i] % 16];
 		} else {
