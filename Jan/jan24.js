@@ -2,29 +2,6 @@
 // Take number and divide by 16
 // take remainder of number multiply by 16
 
-// 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Decimal
-// 0 1 2 3 4 5 6 7 8 9  A  B  C  D  E  F  Hexadecimal
-
-// Index postion will give the hexadecimal
-let conversion = [
-	'0',
-	'1',
-	'2',
-	'3',
-	'4',
-	'5',
-	'6',
-	'7',
-	'8',
-	'9',
-	'A',
-	'B',
-	'C',
-	'D',
-	'E',
-	'F',
-];
-
 function rgbToHex(r, g, b) {
 	let rgbCode = [r, g, b];
 	let hex = '';
