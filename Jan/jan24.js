@@ -32,58 +32,73 @@ function rgbToHex(r, g, b) {
 	let gHex = '';
 	let bHex = '';
 
-	if (r > 0) {
-		let rFirstHex = '';
-		let rSecondHex = '';
-		let rRemain = '';
-		console.log(247 / 16);
-		if (r / 16 >= 16) {
-			rHex = 'FF';
+	let rgbCode = [r, g, b];
+	let hex = '';
+
+	for (let i = 0; i < rgbCode.length; i++) {
+		if (rgbCode[i] / 16 >= 16) {
+			hex += 'FF';
+		} else if (rgbCode[i] > 0) {
+			hex += conversion[Math.floor(rgbCode[i] / 16)];
+			hex += conversion[rgbCode[i] % 16];
 		} else {
-			rFirstHex = conversion[Math.floor(r / 16)];
-			rRemain = r % 16;
-			rSecondHex = conversion[rRemain];
-			rHex = rFirstHex + rSecondHex;
+			hex += '00';
 		}
-	} else {
-		rHex = '00';
-	}
-	if (g > 0) {
-		let gFirstHex = '';
-		let gSecondHex = '';
-		let gRemain = '';
-		if (g / 16 >= 16) {
-			gHex = 'FF';
-		} else {
-			gFirstHex = conversion[Math.floor(g / 16)];
-			gRemain = g % 16;
-			gSecondHex = conversion[gRemain];
-			gHex = gFirstHex + gSecondHex;
-		}
-	} else {
-		gHex = '00';
-	}
-	if (b > 0) {
-		let bFirstHex = '';
-		let bSecondHex = '';
-		let bRemain = '';
-		if (b / 16 >= 16) {
-			bHex = 'FF';
-		} else {
-			bFirstHex = conversion[Math.floor(b / 16)];
-			bRemain = b % 16;
-			bSecondHex = conversion[bRemain];
-			bHex = bFirstHex + bSecondHex;
-		}
-	} else {
-		bHex = '00';
 	}
 
-	console.log(rHex + gHex + bHex);
+	console.log(hex);
+	// if (r > 0) {
+	// 	let rFirstHex = '';
+	// 	let rSecondHex = '';
+	// 	let rRemain = '';
+	// 	console.log(247 / 16);
+	// 	if (r / 16 >= 16) {
+	// 		rHex = 'FF';
+	// 	} else {
+	// 		rFirstHex = conversion[Math.floor(r / 16)];
+	// 		rRemain = r % 16;
+	// 		rSecondHex = conversion[rRemain];
+	// 		rHex = rFirstHex + rSecondHex;
+	// 	}
+	// } else {
+	// 	rHex = '00';
+	// }
+	// if (g > 0) {
+	// 	let gFirstHex = '';
+	// 	let gSecondHex = '';
+	// 	let gRemain = '';
+	// 	if (g / 16 >= 16) {
+	// 		gHex = 'FF';
+	// 	} else {
+	// 		gFirstHex = conversion[Math.floor(g / 16)];
+	// 		gRemain = g % 16;
+	// 		gSecondHex = conversion[gRemain];
+	// 		gHex = gFirstHex + gSecondHex;
+	// 	}
+	// } else {
+	// 	gHex = '00';
+	// }
+	// if (b > 0) {
+	// 	let bFirstHex = '';
+	// 	let bSecondHex = '';
+	// 	let bRemain = '';
+	// 	if (b / 16 >= 16) {
+	// 		bHex = 'FF';
+	// 	} else {
+	// 		bFirstHex = conversion[Math.floor(b / 16)];
+	// 		bRemain = b % 16;
+	// 		bSecondHex = conversion[bRemain];
+	// 		bHex = bFirstHex + bSecondHex;
+	// 	}
+	// } else {
+	// 	bHex = '00';
+	// }
+
+	// console.log(rHex + gHex + bHex);
 }
 
-// rgbToHex(0, 0, 0); //'000000'
-// rgbToHex(0, 0, -20); //'000000'
-// rgbToHex(300, 255, 255); //'FFFFFF'
-// rgbToHex(173, 255, 47); //'ADFF2F'
+rgbToHex(0, 0, 0); //'000000'
+rgbToHex(0, 0, -20); //'000000'
+rgbToHex(300, 255, 255); //'FFFFFF'
+rgbToHex(173, 255, 47); //'ADFF2F'
 rgbToHex(247, 255, 271); // F7FFFF
