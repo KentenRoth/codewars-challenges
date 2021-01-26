@@ -5,7 +5,15 @@
 // return null for invalid inputs
 
 function upArray(arr) {
-	// Code
+	let killSwitch = false;
+	arr.map((num) => {
+		if (num < 0 || isNaN(num) === false) {
+			return (killSwitch = true);
+		}
+	});
+	if (killSwitch === true) {
+		return null;
+	}
 }
 
 upArray([2, 3, 9]); // [2,4,0]
