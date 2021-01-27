@@ -19,6 +19,16 @@ function upArray(arr) {
 		killSwitch = true;
 	}
 
+	if (arr.length > 15) {
+		let cutArray = arr.slice(-15);
+		let frontArray = arr.slice(0, -15);
+		let arrayEnd = cutArray.join('');
+		let intEndArray = ++arrayEnd;
+		let numberString = intEndArray.toString().split('');
+		let finalArray = frontArray.concat(numberString);
+		return finalArray.map(Number);
+	}
+
 	if (isNaN(intArray) === true) {
 		killSwitch = true;
 	}
@@ -26,7 +36,8 @@ function upArray(arr) {
 		return null;
 	}
 
-	return intArray;
+	let numString = intArray.toString().split('');
+	return console.log(numString.map(Number));
 }
 
 upArray([2, 3, 9]); // [2,4,0]
