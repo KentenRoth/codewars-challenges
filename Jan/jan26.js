@@ -4,6 +4,10 @@
 // only positive numbers, only single digit numbers allowed
 // return null for invalid inputs
 
+// loop array backwards
+// if last number is not 9 add one return array
+// if last number is 9 make it a 0 and move backwards 1 number
+
 function upArray(arr) {
 	// let killSwitch = false;
 	// let stringArray = arr.join('');
